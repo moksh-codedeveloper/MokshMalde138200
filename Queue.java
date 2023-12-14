@@ -63,9 +63,9 @@ public class Queue {
         q.add(1);
         q.add(2);
         q.add(3);
-
-        System.out.println(q.peek());
-        System.out.println(q.remove());
-
+        while (q.isEmpty()) {
+            System.out.println(q.peek());
+            System.out.println(q.remove());
+        }
     }
 }
