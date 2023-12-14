@@ -20,8 +20,8 @@ public class Queue {
                 System.out.println("full queue");
                 return;
             }
-            rear++;
-            arr[rear] = data;
+
+            arr[++rear] = data;
 
         }
 
