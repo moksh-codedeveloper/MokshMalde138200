@@ -1,8 +1,10 @@
+import java.util.*;
+
 public class Queue {
     static class QueueY {
         static int arr[];
         static int size;
-        static int rear = -1;
+        static int rear;
 
         QueueY(int n) {
             arr = new int[size];
@@ -10,13 +12,17 @@ public class Queue {
 
         }
 
-        public static Boolean isEmpty() {
+        public static boolean isFull() {
+            return rear == size - 1;
+        }
+
+        public static boolean isEmpty() {
             return rear == -1;
         }
 
         // enqueue
         public static void add(int data) {
-            if (rear == size - 1) {
+            if (isFull()) {
                 System.out.println("full queue");
                 return;
             }
@@ -58,9 +64,8 @@ public class Queue {
         q.add(2);
         q.add(3);
 
-        while (q.isEmpty()) {
-            System.out.println(q.peek());
-            q.remove();
-        }
+        System.out.println(q.peek());
+        System.out.println(q.remove());
+
     }
 }
